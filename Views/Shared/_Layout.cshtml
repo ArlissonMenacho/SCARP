@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#333">
+    <meta http-equiv="refresh" content="40000">
+
+    <environment include="Development">
+        <!-- [if lt IE 9] -->
+        <script src="~/assets/js/html5shiv.min.js"></script>
+        <script src="~/assets/js/respond.min.js"></script>
+        <!-- [endif] -->
+
+        <link href="~/lib/fontawesome-free/css/all.min.css" rel="stylesheet" />
+
+        <meta name="description" content="Material Style Theme">
+        <link rel="stylesheet" href="~/assets/css/preload.min.css">
+        <link rel="stylesheet" href="~/assets/css/plugins.min.css">
+        <link href="~/assets/css/style.grey-800.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="~/assets/css/width-boxed.min.css" id="ms-boxed" disabled="">
+    </environment>
+
+
+    <title>@ViewData["Title"] - SCARP</title>
+</head>
+<body>
+    <header class="ms-header ms-header-white">
+        <!--ms-header-primary-->
+        <div class="container container-fluid">
+            <div class="ms-title text-center">
+                <a href="/Home/Index">
+                    <img src="~/assets/search-text-512.png" class="" width="40" />
+
+
+                    <h1 class="animated fadeInRight animation-delay-6"><span>SCARP</span></h1>
+                </a>
+            </div>
+            <div class="header-right">
+                <a asp-controller="conta" asp-action="Login"
+                   class="btn-circle btn-circle-primary no-focus animated zoomInDown animation-delay-8 zmdi-hc-lg">
+                    <i class="fas fa-user fa-1x"></i>
+                </a>
+            </div>
+        </div>
+
+    </header>
+
+    <nav class="navbar navbar-expand-md navbar-static ms-navbar ms-navbar-dark">
+        <div class="container container">
+            <div class="navbar-header">
+                <a class="navbar-brand" asp-controller="Home"
+                   asp-action="index">
+                    <!-- <img src="assets/img/demo/logo-navbar.png" alt=""> -->
+                    <span class="ms-logo ms-logo-sm">M</span>
+                    <span class="ms-title">Material <strong>Style</strong></span>
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ms-navbar" aria-controls="ms-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="ms-navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a asp-controller="Home"
+                           asp-action="index" class="nav-link dropdown-toggle animated fadeIn animation-delay-7">Página Inicial</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="Relatorio" asp-action="ConsultaItem" class="nav-link dropdown-toggle animated fadeIn animation-delay-7">Publicações Recentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="Relatorio" asp-action="ConsultaAta" class="nav-link dropdown-toggle animated fadeIn animation-delay-7">Consulta de Atas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="EnviarConta"
+                           asp-action="ConsultaItens" class="nav-link dropdown-toggle animated fadeIn animation-delay-7">Consulta de Carona</a>
+                    </li>
+                    <li class="nav-item">
+                        <a asp-controller="Relatorio"
+                           asp-action="ConsultaItens" class="nav-link dropdown-toggle animated fadeIn animation-delay-7">Consulta de Itens</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container text-center">
+            &copy; 2020 - SCARP - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <environment include="Production">
+        <script src="~/assets/js/plugins.min.js"></script>
+        <script src="~/assets/js/app.min.js"></script>
+
+    </environment>
+    <environment include="Development">
+        <script src="~/assets/js/plugins.min.js"></script>
+        <script src="~/assets/js/app.min.js"></script>
+    </environment>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
