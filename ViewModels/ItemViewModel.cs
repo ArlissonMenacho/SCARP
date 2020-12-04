@@ -1,11 +1,12 @@
-﻿using System;
+﻿using SCARP.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace SCARP.Models
+namespace SCARP.ViewModels
 {
-    public class Item
+    public class ItemViewModel
     {
         public Ata ObjAta { get; set; }
         public long CodigoMaterial { get; set; }

@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using SCARP.Repository;
+using SCARP.Repository.Interfaces;
 
 namespace SCARP
 {
@@ -25,6 +27,7 @@ namespace SCARP
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddControllersWithViews().AddRazorRuntimeCompilation();
+            services.AddScoped<IConsultasRepository,ConsultasRepository>();
 
         }
 

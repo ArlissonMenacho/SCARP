@@ -1,4 +1,5 @@
 ﻿
+using SCARP.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +9,11 @@ namespace SCARP.Models
 {
     public class Ata
     {
-        public int CodigoAta { get; set; }
-        public int Ano { get; set; }
+        public int? CodigoAta { get; set; }
+        public int? Ano { get; set; }
         public string NumeroPregao { get; set; }
         public double LimiteAdesao { get; set; }
+        public string ObjetoResumido { get; set; }
         public DateTime DataFinalVigencia { get; set; }
     }
 }
